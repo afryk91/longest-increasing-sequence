@@ -19,7 +19,7 @@ function lengthOfLongestSubseqEndingWithItem(list, len, item) {
 
 function findLIS(list) {
     const longestLength = list.reduce((lengthOfLongest, item, i) => {        
-        let newLength = binarySearch(list, lengthOfLongest, item);
+        let newLength = lengthOfLongestSubseqEndingWithItem(list, lengthOfLongest, item);
         
         predecesorsIdx[i] = subsequenceEndingsIdx[newLength - 1];
         subsequenceEndingsIdx[newLength] = i;
